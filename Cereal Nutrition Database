@@ -1,0 +1,35 @@
+#In this query, I will be looking for cereal with high nutrition. 
+
+1. Find a cereal with a sodium level lower than 250 and sugar lower than 12 
+SELECT Name,Sodium, Sugars
+FROM Cereal
+WHERE Sodium < 250
+GROUP BY Sugars
+HAVING Count(Sugars) < 12
+ORDER BY Count(Sugars) asc
+
+2. Find a hot cereal where it's brand is Quaker 
+SELECT Name, MFR , Type
+FROM Cereal
+WHERE Type = 'H'
+AND MFR = 'Q'
+
+3. Find ten cereals where its calories are higher than 100 but carbs are lower than 15
+SELECT Name, Calories, Carbo
+FROM Cereal
+WHERE Calories > 100
+Order by Carbo > 15
+Limit 10
+
+4. Find the top five highest rated cereal
+SELECT Name, Rating
+FROM Cereal
+ORDER by Rating desc
+limit 5
+
+5. Find cereals that have a at least 3 protein but lower than 200 sodium
+SELECT Name, Protein, Sodium
+FROM Cereal
+WHERE Protein > 3
+AND Sodium < 200
+
