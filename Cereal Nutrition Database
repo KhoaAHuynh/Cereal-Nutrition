@@ -33,3 +33,12 @@ FROM Cereal
 WHERE Protein > 3
 AND Sodium < 200
 
+6. Find the highest rated cereal where the manufacturer is Quaker 
+select Name, MFR, Rating
+FROM Cereal
+WHERE MFR = 'Q'
+Order By Rating desc
+
+
+
+
